@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STYLOS Barber's Club</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="css/booking.css">
+</head>
+
+<body>
+
+<!-- ENCABEZADO -->
+<header>
+    <div class="logo">STYLOS<span>.</span></div>
+
+    <nav>
+        <a href="#inicio">INICIO</a>
+        <a href="#productos">TIENDA</a>
+        <a href="#sucursales">BARBERÍA</a>
+        <a href="#servicios">SERVICIOS</a>
+        <a href="#reservas">RESERVAR</a>
+        <a href="#contacto">CONTACTO</a>
+    </nav>
+
+    <button class="cart-btn" onclick="toggleCart()">
+        🛒 <span id="cart-count">0</span>
+    </button>
+</header>
+
+<!-- CARRITO LATERAL -->
+<div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
+
+<div class="cart-sidebar" id="cart-sidebar">
+    <div class="cart-header">
+        <h3>🛒 Tu Carrito</h3>
+        <button onclick="toggleCart()" class="cart-close">&times;</button>
+    </div>
+    <div class="cart-items" id="cart-items">
+        <p class="cart-empty">Tu carrito está vacío.</p>
+    </div>
+    <div class="cart-footer">
+        <div class="cart-total">
+            <span>Total:</span>
+            <span id="cart-total-price">Bs. 0.00</span>
+        </div>
+        <button class="btn btn-whatsapp" onclick="sendToWhatsApp()">
+            📲 Pedir por WhatsApp
+        </button>
+        <button class="btn btn-clear" onclick="clearCart()">
+            🗑 Vaciar carrito
+        </button>
+    </div>
+</div>
+
+<!-- PORTADA -->
+<div class="hero" id="inicio">
+    <div class="hero-content">
+        <h1>STYLOS BARBER'S CLUB</h1>
+        <p>El estilo está en cada detalle.</p>
+        <div class="hero-btns">
+            <a href="#reservas" class="btn">AGENDA TU CITA</a>
+            <a href="#productos" class="btn btn-outline">VER TIENDA</a>
+        </div>
+    </div>
+</div>
+
+<!-- PRODUCTOS -->
+<section id="productos">
+    <h2 class="section-title">MÁS <span>VENDIDOS</span></h2>
+    <p class="section-subtitle">Agrega productos a tu carrito y realiza tu pedido por WhatsApp</p>
+
+    <div class="products" id="products-grid"></div>
+</section>
+
+
+
+<!-- BARBERÍA -->
+<section id="sucursales">
+    <h2 class="section-title">CONOCE <span>NUESTRA BARBERÍA</span></h2>
+
+    <div class="branches branches-3">
+        <div class="branch">
+            <img src="barberia-fotos/barberia.jpeg" alt="STYLOS Barber's Club">
+            <div class="branch-info">
+                <h3>STYLOS BARBER'S CLUB</h3>
+                <p>Un ambiente moderno y cómodo para nuestros clientes.</p>
+            </div>
+        </div>
+        <div class="branch">
+            <img src="barberia-fotos/espacios de trabajo.jpeg" alt="Espacios de trabajo">
+            <div class="branch-info">
+                <h3>ESPACIOS DE TRABAJO</h3>
+                <p>Equipados para brindarte el mejor servicio.</p>
+            </div>
+        </div>
+        <div class="branch">
+            <img src="barberia-fotos/profesionales.jpeg" alt="Profesionales">
+            <div class="branch-info">
+                <h3>PROFESIONALES</h3>
+                <p>Atención personalizada en cada visita.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICIOS -->
+<section id="servicios">
+    <h2 class="section-title">NUESTROS <span>SERVICIOS</span></h2>
+
+    <div class="services" id="services-grid"></div>
+</section>
+
+<!-- RESERVACIONES -->
+<section class="booking-section" id="reservas">
+    <div class="booking-container">
+        <div class="booking-left">
+            <h2 class="section-title">AGENDA TU <span>CITA</span></h2>
+            <p>Elige tu barbero, corte favorito y el horario que más te convenga. Confirmamos tu reserva por WhatsApp.</p>
+
+            <div class="booking-features">
+                <div class="bf-item">✅ Confirmación inmediata</div>
+                <div class="bf-item">✅ Sin costo adicional</div>
+                <div class="bf-item">✅ Cancela cuando quieras</div>
+            </div>
+        </div>
+
+        <div class="booking-right">
+            <form id="booking-form" class="booking-form">
+                <div class="form-group">
+                    <label>Nombre completo</label>
+                    <input type="text" id="nombre" placeholder="Tu nombre" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Número de celular</label>
+                    <input type="tel" id="telefono" placeholder="Ej: 70000000" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Tipo de corte</label>
+                    <select id="servicioElegido" required>
+                        <option value="">Selecciona el corte</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Fecha</label>
+                        <input type="date" id="fecha" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Hora</label>
+                        <input type="time" id="hora" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Notas adicionales (opcional)</label>
+                    <textarea id="notas" placeholder="Algún detalle especial para tu corte..."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-full btn-whatsapp">
+                    📲 CONFIRMAR POR WHATSAPP
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="contact-section" id="contacto">
+    <h2 class="section-title">SÍGUENOS Y <span>CONTÁCTANOS</span></h2>
+
+    <div class="contact-grid">
+        <div class="contact-card">
+            <h4>UBICACIÓN</h4>
+            <p>Tejerina entre Bolívar y Sucre</p>
+            <p>Oruro, Bolivia</p>
+            <a href="https://www.google.com/maps/search/Tejerina+entre+Bolivar+y+Sucre+Oruro+Bolivia" target="_blank" style="color:#b58b45; font-size:13px; font-weight:700;">Ver en Google Maps →</a>
+        </div>
+        <div class="contact-card">
+            <h4>WHATSAPP</h4>
+            <a href="https://wa.me/59168307053" target="_blank">+591 68307053</a>
+        </div>
+        <div class="contact-card">
+            <h4>TIKTOK</h4>
+            <a href="https://www.tiktok.com/@lizandrobarbers" target="_blank">STYLOS Barber's Club</a>
+        </div>
+    </div>
+</section>
+
+<!-- PIE DE PÁGINA -->
+<footer>
+    <h2>STYLOS<span> BARBER'S CLUB</span></h2>
+    <p>El estilo está en cada detalle.</p>
+    <p>Oruro - Bolivia</p>
+    <p>© 2026 STYLOS Barber's Club. Todos los derechos reservados.</p>
+</footer>
+
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/booking.js"></script>
+</body>
+</html>

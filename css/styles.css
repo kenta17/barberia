@@ -1,0 +1,519 @@
+/* ============================================
+   STYLOS BARBER'S CLUB - Estilos principales
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    background: #fff;
+    color: #171717;
+}
+
+/* ---- HEADER ---- */
+header {
+    background: #fff;
+    padding: 18px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: 900;
+    letter-spacing: 4px;
+    color: #171717;
+}
+
+.logo span { color: #b58b45; }
+
+nav {
+    display: flex;
+    gap: 22px;
+}
+
+nav a {
+    color: #333;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: color 0.2s;
+}
+
+nav a:hover { color: #b58b45; }
+
+/* ---- BOTÓN CARRITO EN HEADER ---- */
+.cart-btn {
+    background: #171717;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.cart-btn:hover { background: #b58b45; }
+
+#cart-count {
+    background: #b58b45;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 900;
+}
+
+/* ---- BOTONES GENERALES ---- */
+.btn {
+    background: #b58b45;
+    color: white;
+    padding: 14px 30px;
+    text-decoration: none;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 1px;
+    transition: background 0.2s, transform 0.1s;
+    border-radius: 3px;
+}
+
+.btn:hover {
+    background: #171717;
+    transform: translateY(-1px);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: #171717;
+}
+
+.btn-full { width: 100%; text-align: center; }
+
+.btn-whatsapp {
+    background: #25D366;
+    color: white;
+}
+
+.btn-whatsapp:hover { background: #128C7E; }
+
+/* ---- HERO ---- */
+.hero {
+    height: 620px;
+    background:
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)),
+        url("https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1400")
+        center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 60px;
+    letter-spacing: 6px;
+    font-weight: 900;
+    line-height: 1.1;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin: 18px 0 32px;
+    color: #ddd;
+    letter-spacing: 2px;
+}
+
+.hero-btns {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ---- SECCIONES ---- */
+section { padding: 80px 7%; }
+
+.section-title {
+    text-align: center;
+    font-size: 30px;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+    font-weight: 900;
+}
+
+.section-title span { color: #b58b45; }
+
+.section-subtitle {
+    text-align: center;
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 45px;
+    letter-spacing: 0.5px;
+}
+
+/* ---- PRODUCTOS ---- */
+.products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+    margin-top: 20px;
+}
+
+.product {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.product:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.product-img-wrap {
+    position: relative;
+    overflow: hidden;
+}
+
+.product img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s;
+}
+
+.product:hover img { transform: scale(1.05); }
+
+.product-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #b58b45;
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 4px 8px;
+    letter-spacing: 1px;
+    border-radius: 3px;
+}
+
+.product-info {
+    padding: 18px 16px 20px;
+}
+
+.product h3 {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.product p {
+    color: #888;
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+.price {
+    color: #b58b45;
+    font-weight: 900;
+    font-size: 17px;
+    margin-bottom: 14px;
+    display: block;
+}
+
+.btn-add-cart {
+    background: #171717;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    width: 100%;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    transition: background 0.2s;
+}
+
+.btn-add-cart:hover { background: #b58b45; }
+
+/* ---- BENEFICIOS ---- */
+.benefits {
+    background: #171717;
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    text-align: center;
+    padding: 55px 5%;
+    gap: 20px;
+}
+
+.benefit-icon {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.benefits h3 {
+    color: #c6a05b;
+    margin-bottom: 10px;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+.benefits p {
+    font-size: 13px;
+    color: #aaa;
+    line-height: 1.6;
+}
+
+/* ---- BARBERÍA ---- */
+.branches {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.branches-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.branch {
+    background: #f8f8f8;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.branch:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.branch img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.branch-info {
+    padding: 18px;
+}
+
+.branch h3 {
+    font-size: 13px;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.branch p {
+    color: #777;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* ---- SERVICIOS ---- */
+.services {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.service {
+    background: #f8f8f8;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-bottom: 3px solid transparent;
+}
+
+.service:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    border-bottom-color: #b58b45;
+}
+
+.service-img-wrap {
+    overflow: hidden;
+}
+
+.service-img-wrap img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s;
+}
+
+.service:hover .service-img-wrap img {
+    transform: scale(1.05);
+}
+
+.service-body {
+    padding: 18px 16px 20px;
+    text-align: center;
+}
+
+.service h3 {
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.service p {
+    color: #777;
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.service-price {
+    color: #b58b45;
+    font-weight: 900;
+    font-size: 16px;
+}
+
+/* ---- CONTACTO ---- */
+.contact-section {
+    background: #f5f5f5;
+    text-align: center;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-card {
+    background: white;
+    padding: 30px 20px;
+    border-radius: 8px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.contact-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+.contact-icon {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.contact-card h4 {
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.contact-card p,
+.contact-card a {
+    color: #666;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.contact-card a:hover { color: #25D366; }
+
+/* ---- FOOTER ---- */
+footer {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    line-height: 2.2;
+}
+
+footer h2 {
+    font-size: 22px;
+    letter-spacing: 4px;
+    margin-bottom: 8px;
+}
+
+footer span { color: #c6a05b; }
+
+footer p { color: #888; font-size: 13px; }
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 1100px) {
+    .products,
+    .branches,
+    .services,
+    .contact-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .benefits {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        gap: 14px;
+        padding: 14px 4%;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .hero-content h1 { font-size: 34px; }
+    .hero { height: 480px; }
+
+    .products,
+    .branches,
+    .services,
+    .benefits,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    section { padding: 55px 5%; }
+}
